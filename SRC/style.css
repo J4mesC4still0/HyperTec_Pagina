@@ -1,0 +1,92 @@
+/*Estilos de Global*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  /* Header */
+  .main-header {
+    background-color: #002E34;
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .header-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 60px;
+  }
+  
+  .nav-menu a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-menu a:hover,
+  .nav-menu a.active {
+    color: #00B4C6;
+    border-bottom: 2px solid #00B4C6;
+    padding-bottom: 2px;
+  }
+  
+  /* Contenido principal */
+  .main-content {
+    text-align: center;
+    padding: 60px 20px;
+  }
+  
+  .hero h1 {
+    font-size: 36px;
+    color: #002E34;
+    margin-bottom: 10px;
+  }
+  
+  .hero p {
+    font-size: 18px;
+    color: #555;
+  }
+  
+  /* Footer */
+  .main-footer {
+    background-color: #002E34;
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+  }
+  
+  .footer-content p {
+    margin: 5px 0;
+  }
+  
+  .footer-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 8px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-nav a:hover {
+    color: #00b8a9; /* Color de resaltado opcional al pasar el ratón por encima */
+  }
