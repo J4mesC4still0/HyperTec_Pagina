@@ -2,47 +2,383 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios | HyperTec Market</title>
-    <link rel="stylesheet" href="SRC/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servicios | HyperTec Market</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .main-header {
+      background-color: #003366;
+      color: #fff;
+      padding: 1rem 0;
+    }
+
+    .header-container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      height: 50px;
+    }
+
+    .nav-menu a {
+      color: #fff;
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-menu a.active {
+      text-decoration: underline;
+    }
+
+    .main-content {
+      width: 90%;
+      max-width: 1200px;
+      margin: 2rem auto;
+    }
+
+    .hero {
+      background-color: #e0f7fa;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
+
+    .services-section,
+    .categories-section,
+    .featured-products,
+    .benefits-section,
+    .testimonials,
+    .customer-support,
+    .faq-section,
+    .newsletter {
+      margin-bottom: 3rem;
+    }
+
+    .services-section h2,
+    .categories-section h2,
+    .featured-products h2,
+    .benefits-section h2,
+    .testimonials h2,
+    .customer-support h2,
+    .faq-section h2,
+    .newsletter h2 {
+      margin-bottom: 1rem;
+      color: #003366;
+    }
+
+    .service-boxes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .service-box {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+    }
+
+    .category-card {
+      background: #ffffff;
+      padding: 1rem;
+      text-align: center;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .product-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .product-card {
+      background: #fff;
+      padding: 1rem;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .buy-btn {
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #004443;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .buy-btn:hover {
+      background-color: #004443;
+    }
+
+    .benefits-list {
+      list-style: none;
+      padding-left: 1rem;
+    }
+
+    .benefits-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    .testimonial-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .testimonial {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      font-style: italic;
+      border-left: 4px solid #004443;
+    }
+
+    .support-form,
+    .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      max-width: 500px;
+      margin-top: 1rem;
+    }
+
+    .support-form input,
+    .support-form textarea,
+    .newsletter-form input {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .support-form button,
+    .newsletter-form button {
+      background-color: #004443;
+      color: white;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .support-form button:hover,
+    .newsletter-form button:hover {
+      background-color: #004443;
+    }
+
+    .faq-item {
+      margin-bottom: 1rem;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 4px solid #004443;
+    }
+
+    .main-footer {
+      background-color: #004443;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .footer-nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    .footer-nav a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 
 <body>
+  <header class="main-header">
+    <div class="header-container">
+      <img src="SRC/img/img_index/logo_supermercado.png" alt="Logo HyperTec Market" class="logo" />
+      <nav class="nav-menu">
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="servicios.html" class="active">Servicios</a>
+        <a href="contactos.html">Contáctanos</a>
+      </nav>
+    </div>
+  </header>
 
-    <header class="main-header">
-        <div class="header-container">
-            <img src="SRC/img/img_index/logo_supermercado.png" alt="Logo HyperTec Market" class="logo">
-            <nav class="nav-menu">
-                <a href="index.html">Inicio</a>
-                <a href="nosotros.html">Nosotros</a>
-                <a href="servicios.html" class="active">Servicios</a>
-                <a href="contactos.html">Contáctanos</a>
-            </nav>
+  <main class="main-content">
+    <section class="hero">
+      <h1>Nuestros Servicios</h1>
+      <p>Descubre todo lo que HyperTec Market tiene para ofrecerte.</p>
+    </section>
+
+    <section class="services-section">
+      <h2>¿Qué te ofrecemos?</h2>
+      <div class="service-boxes">
+        <div class="service-box">
+          <h3>Venta de Electrónica</h3>
+          <p>Desde laptops hasta smart TVs, contamos con lo último en tecnología.</p>
         </div>
-    </header>
-
-    <main class="main-content">
-        <section class="hero">
-            <h1>Nuestros Servicios</h1>
-            <p>Descubre todo lo que HyperTec Market tiene para ofrecerte.</p>
-        </section>
-    </main>
-
-    <footer class="main-footer">
-        <div class="footer-content">
-            <p>&copy; 2025 HyperTec Market. Todos los derechos reservados.</p>
-            <nav class="footer-nav">
-                <a href="index.html">Inicio</a> |
-                <a href="nosotros.html">Nosotros</a> |
-                <a href="servicios.html">Servicios</a> |
-                <a href="contactos.html">Contáctanos</a>
-            </nav>
-            <p>Gracias por elegirnos para tus compras tecnológicas y del hogar.</p>
+        <div class="service-box">
+          <h3>Envíos Seguros y Rápidos</h3>
+          <p>Despachos en menos de 48h en zonas urbanas y seguimiento en tiempo real.</p>
         </div>
-    </footer>
+        <div class="service-box">
+          <h3>Instalación y Soporte</h3>
+          <p>Te asesoramos en la configuración de tus equipos, tanto en tienda como en línea.</p>
+        </div>
+        <div class="service-box">
+          <h3>Garantía Extendida</h3>
+          <p>Protege tus compras por hasta 2 años adicionales con nuestro plan de garantía.</p>
+        </div>
+      </div>
+    </section>
 
+    <section class="categories-section">
+      <h2>Categorías de Productos</h2>
+      <div class="categories-grid">
+        <div class="category-card">Laptops</div>
+        <div class="category-card">Smartphones</div>
+        <div class="category-card">Accesorios</div>
+        <div class="category-card">Smart Home</div>
+        <div class="category-card">Consolas y Videojuegos</div>
+        <div class="category-card">Audio y Sonido</div>
+      </div>
+    </section>
 
+    <section class="featured-products">
+      <h2>Productos Destacados</h2>
+      <div class="product-gallery">
+        <div class="product-card">
+          <img src="SRC/img/productos/laptop1.jpg" alt="Laptop Gaming" />
+          <h4>Laptop Gaming 15"</h4>
+          <p>$899.00</p>
+          <button class="buy-btn">Comprar</button>
+        </div>
+        <div class="product-card">
+          <img src="SRC/img/productos/celular1.jpg" alt="Smartphone 5G" />
+          <h4>Smartphone 5G</h4>
+          <p>$499.00</p>
+          <button class="buy-btn">Comprar</button>
+        </div>
+        <div class="product-card">
+          <img src="SRC/img/productos/smartwatch1.jpg" alt="Smartwatch Deportivo" />
+          <h4>Smartwatch Deportivo</h4>
+          <p>$149.00</p>
+          <button class="buy-btn">Comprar</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits-section">
+      <h2>¿Por qué elegir HyperTec Market?</h2>
+      <ul class="benefits-list">
+        <li>✔️ Atención personalizada 24/7</li>
+        <li>✔️ Métodos de pago seguros y variados</li>
+        <li>✔️ Promociones constantes y exclusivos descuentos</li>
+        <li>✔️ Garantía y devolución sin complicaciones</li>
+      </ul>
+    </section>
+
+    <section class="testimonials">
+      <h2>Lo que dicen nuestros clientes</h2>
+      <div class="testimonial-cards">
+        <div class="testimonial">
+          <p>"Compré una laptop gamer y llegó al día siguiente. Excelente atención!"</p>
+          <strong>- Carlos M.</strong>
+        </div>
+        <div class="testimonial">
+          <p>"Me ayudaron a elegir el mejor celular para mis necesidades. ¡Gracias!"</p>
+          <strong>- Laura G.</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="customer-support">
+      <h2>¿Necesitas ayuda?</h2>
+      <p>Completa el siguiente formulario y te responderemos a la brevedad.</p>
+      <form class="support-form">
+        <input type="text" placeholder="Nombre completo" required />
+        <input type="email" placeholder="Correo electrónico" required />
+        <textarea placeholder="Tu mensaje aquí..." required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <section class="faq-section">
+      <h2>Preguntas Frecuentes</h2>
+      <div class="faq-item">
+        <h4>¿Realizan envíos a todo el país?</h4>
+        <p>Sí, hacemos envíos a nivel nacional y con tarifas accesibles.</p>
+      </div>
+      <div class="faq-item">
+        <h4>¿Qué formas de pago aceptan?</h4>
+        <p>Aceptamos tarjetas de crédito, débito, transferencias y pagos en efectivo vía agentes.</p>
+      </div>
+      <div class="faq-item">
+        <h4>¿Puedo recoger mi compra en tienda?</h4>
+        <p>Claro, contamos con retiro en tienda disponible sin costo adicional.</p>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <h2>Suscríbete a nuestro boletín</h2>
+      <p>Recibe ofertas exclusivas y noticias de tecnología cada semana.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Tu correo electrónico" required />
+        <button type="submit">Suscribirme</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <p>&copy; 2025 HyperTec Market. Todos los derechos reservados.</p>
+      <nav class="footer-nav">
+        <a href="index.html">Inicio</a> |
+        <a href="nosotros.html">Nosotros</a> |
+        <a href="servicios.html">Servicios</a> |
+        <a href="contactos.html">Contáctanos</a>
+      </nav>
+      <p>Gracias por elegirnos para tus compras tecnológicas y del hogar.</p>
+    </div>
+  </footer>
 </body>
 
 </html>
